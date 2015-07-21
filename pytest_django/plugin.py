@@ -362,7 +362,9 @@ class CursorManager(object):
 
     def disable(self):
         self._save_active_wrapper()
-        self._dbutil.CursorWrapper = self._blocking_wrapper
+        # SEATME change: always use real_wrapper
+        # self._dbutil.CursorWrapper = self._blocking_wrapper
+        self._dbutil.CursorWrapper = self._real_wrapper
 
     def restore(self):
         self._dbutil.CursorWrapper = self._history.pop()
