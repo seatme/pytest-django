@@ -50,7 +50,7 @@ def _django_db_setup(request,
                 monkey_patch_creation_for_db_reuse()
 
         # Create the database
-        db_cfg = setup_databases(verbosity=0, interactive=False)
+        db_cfg = setup_databases(verbosity=2, interactive=False)
 
     def teardown_database():
         with _django_cursor_wrapper:
